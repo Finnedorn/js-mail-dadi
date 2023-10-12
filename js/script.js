@@ -10,7 +10,6 @@ Gioco dei dadi
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 Stabilire il vincitore, in base a chi fa il punteggio più alto.
 Prima di partire a scrivere codice poniamoci qualche domanda:
-Che ci sia un array da qualche parte?
 Se dobbiamo confrontare qualcosa che "cosa" ci serve?
 
 
@@ -92,5 +91,37 @@ cancel.addEventListener('click', function() {
 
 //creo una const che generi un numero da 1 a 6 per il giocatore 
 const playerscore = document.getElementById('playerscore');
+
 //creo una const che geenri un numero da 1 a 6 per la cpu
 const cpuscore = document.getElementById('cpuscore');
+
+//creo un'altra const per l'attivazione del bottone
+const play = document.getElementById('play');
+
+//creo una const per l'attivazione del replay
+const replay = document.getElementById('replay');
+
+
+
+play.addEventListener('click', function(){
+
+    let rngplayer = Math.floor((Math.random() * 6) + 1);
+    let rngcpu = Math.floor((Math.random() * 6) + 1);
+
+    playerscore = rngplayer;
+    cpuscore = rngcpu;
+
+    console.log( rngplayer, rngcpu);
+    
+    //link ad una let il div che eseguirà il messaggio di risultato
+    let outcome = document.getElementById('outcome');
+
+    if (rngplayer > rngcpu) {
+        outcome.innerHTML = 'hai vinto!'
+    } else if (rngplayer < rngcpu) {
+        outcome.innerHTML = 'hai perso!'
+    } else {
+        outcome.innerHTML = 'pareggio!'
+    }
+})
+
