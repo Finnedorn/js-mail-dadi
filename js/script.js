@@ -1,6 +1,14 @@
 
 //Mail Checker
 
+//creo un array con una lista di mail possibili
+const mail = [
+    'mariomario@gmail.com',
+    'nonsochescrivere@outlook.com',
+    'checimetto@gmail.com',
+    'reporepo.ciao@hotmail.it'
+]
+
 //creo una const che si allacci con l id del bottone per la funzione
 const search = document.getElementById('search');
 
@@ -9,17 +17,6 @@ search.addEventListener('click', function() {
 
     //creo una const e la linko al value del form
     const mailcheck = document.getElementById('mail').value;
-
-    //creo una const che si allacci all'id del bottone annulla
-    const cancel = document.getElementById('cancel');
-
-    //creo un array con una lista di mail possibili
-    const mail = [
-        'mariomario@gmail.com',
-        'nonsochescrivere@outlook.com',
-        'checimetto@gmail.com',
-        'reporepo.ciao@hotmail.it'
-    ]
 
     //creo un ciclo che passi in rassegna a tutti gli elementi della lista
 
@@ -31,7 +28,7 @@ search.addEventListener('click', function() {
     //creo una let linkata al div dove inserirò il messaggio
     let result = document.getElementById('result');
 
-    for(let i = 0; i < mail.length; i++) {
+    for(let i = 0; i <= mail.length - 1; i++) {
 
         //creo una let per associare i a tutti i valori dell'array
         let mailcorrect = mail[i];
@@ -46,9 +43,9 @@ search.addEventListener('click', function() {
     //ora setto il messagio in base al true false della let checked 
     if (checked) { 
         
-        result.innerHTML = 'perfetto!'
+        result.innerHTML = 'perfetto!';
     } else {
-        result.innerHTML = 'email non corrispondente!'
+        result.innerHTML = 'email non corrispondente!';
     }
 })
 
